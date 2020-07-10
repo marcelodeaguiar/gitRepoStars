@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GitRepoListViewController: UIViewController {
+class RepositoriesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

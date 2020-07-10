@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct RepoOwner: Decodable {
+struct RepositoryOwner: Decodable {
     let login: String
     let avatarURL: String
 

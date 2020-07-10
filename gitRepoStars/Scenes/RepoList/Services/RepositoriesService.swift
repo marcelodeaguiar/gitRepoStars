@@ -8,15 +8,15 @@
 
 import Foundation
 
-protocol GitRepoListServiceType {
-    func fetchSwiftReposSortedByStar(page: Int, _ completion: @escaping (Result<GitRepoList, ApiError>) -> Void)
+protocol RepositoriesServiceType {
+    func fetchSwiftReposSortedByStar(page: Int, _ completion: @escaping (Result<RepositoryList, ApiError>) -> Void)
 }
 
-struct GitRepoListService: GitRepoListServiceType {
+struct RepositoriesService: RepositoriesServiceType {
     let session: URLSessionProtocol
     let apiBasePath = "https://api.github.com/search/repositories"
 
-    func fetchSwiftReposSortedByStar(page: Int = 1, _ completion: @escaping (Result<GitRepoList, ApiError>) -> Void) {
+    func fetchSwiftReposSortedByStar(page: Int = 1, _ completion: @escaping (Result<RepositoryList, ApiError>) -> Void) {
         guard let url = URL(string: "\(apiBasePath)?q=language:swift&sort=stars&page=\(page)") else {
             completion(.failure(.invalidPath))
             return
