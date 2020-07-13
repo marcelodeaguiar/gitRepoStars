@@ -10,6 +10,7 @@ target 'gitRepoStars' do
       pod 'Quick'
       pod 'Nimble'
     end
+
     target 'gitRepoStarsUITests' do
       # Pods for testing
     end

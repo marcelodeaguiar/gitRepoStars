@@ -21,7 +21,9 @@
 		56116DF524B7405D003394F4 /* RepositoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56116DF424B7405D003394F4 /* RepositoryList.swift */; };
 		56116DF824B741D0003394F4 /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56116DF724B741D0003394F4 /* ApiError.swift */; };
 		56116DFA24B74534003394F4 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56116DF924B74534003394F4 /* URLSession+Extensions.swift */; };
-		562E83FF24B8036D00C47555 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562E83FE24B8036D00C47555 /* ApiClient.swift */; };
+		562E83FF24B8036D00C47555 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562E83FE24B8036D00C47555 /* HttpClient.swift */; };
+		5633928924BA04500066DC53 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633928824BA04500066DC53 /* RepositoryCell.swift */; };
+		5633928B24BA0C080066DC53 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633928A24BA0C080066DC53 /* BindableType.swift */; };
 		569D694A24B80D7600650651 /* HttpClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569D694924B80D7600650651 /* HttpClientSpec.swift */; };
 		56AD3ECD24B818BD00320364 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD3ECC24B818BD00320364 /* URLSessionMock.swift */; };
 		A8DF117CA294418D6755A1C7 /* Pods_gitRepoStars_Tests_gitRepoStarsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EAF23DA331B8D8905112E1 /* Pods_gitRepoStars_Tests_gitRepoStarsTests.framework */; };
@@ -70,7 +72,9 @@
 		56116DF424B7405D003394F4 /* RepositoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryList.swift; sourceTree = "<group>"; };
 		56116DF724B741D0003394F4 /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
 		56116DF924B74534003394F4 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
-		562E83FE24B8036D00C47555 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		562E83FE24B8036D00C47555 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		5633928824BA04500066DC53 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
+		5633928A24BA0C080066DC53 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
 		569D694924B80D7600650651 /* HttpClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpec.swift; sourceTree = "<group>"; };
 		56AD3ECC24B818BD00320364 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		6EF32EBA1C9033F67BB07E95 /* Pods-gitRepoStars-gitRepoStarsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitRepoStars-gitRepoStarsUITests.release.xcconfig"; path = "Target Support Files/Pods-gitRepoStars-gitRepoStarsUITests/Pods-gitRepoStars-gitRepoStarsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -161,6 +165,7 @@
 				56116DE624B73C91003394F4 /* Scenes */,
 				56116DB624B73BD7003394F4 /* AppDelegate.swift */,
 				56116DB824B73BD7003394F4 /* SceneDelegate.swift */,
+				5633928A24BA0C080066DC53 /* BindableType.swift */,
 				56116DBF24B73BDA003394F4 /* Assets.xcassets */,
 				56116DC124B73BDA003394F4 /* LaunchScreen.storyboard */,
 				56116DC424B73BDA003394F4 /* Info.plist */,
@@ -210,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				56116DBA24B73BD7003394F4 /* RepositoriesViewController.swift */,
+				5633928824BA04500066DC53 /* RepositoryCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,7 +251,7 @@
 			children = (
 				56116DF924B74534003394F4 /* URLSession+Extensions.swift */,
 				56116DF724B741D0003394F4 /* ApiError.swift */,
-				562E83FE24B8036D00C47555 /* ApiClient.swift */,
+				562E83FE24B8036D00C47555 /* HttpClient.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -481,10 +487,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				562E83FF24B8036D00C47555 /* ApiClient.swift in Sources */,
+				562E83FF24B8036D00C47555 /* HttpClient.swift in Sources */,
 				56116DFA24B74534003394F4 /* URLSession+Extensions.swift in Sources */,
 				56116DBB24B73BD7003394F4 /* RepositoriesViewController.swift in Sources */,
+				5633928924BA04500066DC53 /* RepositoryCell.swift in Sources */,
 				56116DB724B73BD7003394F4 /* AppDelegate.swift in Sources */,
+				5633928B24BA0C080066DC53 /* BindableType.swift in Sources */,
 				56116DF524B7405D003394F4 /* RepositoryList.swift in Sources */,
 				56116DEF24B73D41003394F4 /* Repository.swift in Sources */,
 				56116DF124B74007003394F4 /* RepositoryOwner.swift in Sources */,

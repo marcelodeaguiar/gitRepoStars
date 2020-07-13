@@ -11,7 +11,7 @@ import Foundation
 struct Repository: Decodable {
     let name: String
     let starts: Int
-    let owner: RepoOwner
+    let owner: RepositoryOwner
 
     enum CodingKeys: String, CodingKey {
         case name = "name"

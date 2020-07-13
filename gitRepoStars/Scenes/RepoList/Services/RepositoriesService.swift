@@ -13,8 +13,12 @@ protocol RepositoriesServiceType {
 }
 
 struct RepositoriesService: RepositoriesServiceType {
+    private let apiBasePath = "https://api.github.com/search/repositories"
     let session: URLSessionProtocol
-    let apiBasePath = "https://api.github.com/search/repositories"
+
+    init(session: URLSessionProtocol = URLSession.shared) {
+        self.session = session
+    }
 
     func fetchSwiftReposSortedByStar(page: Int = 1, _ completion: @escaping (Result<RepositoryList, ApiError>) -> Void) {
         guard let url = URL(string: "\(apiBasePath)?q=language:swift&sort=stars&page=\(page)") else {
