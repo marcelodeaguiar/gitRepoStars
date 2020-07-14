@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct RepositoryList: Decodable {
+struct RepositoryList: Decodable, Equatable {
     let items: [Repository]
 }

@@ -76,7 +76,7 @@ class RepositoriesViewController: UIViewController, BindableType {
 }
 
 // MARK: - RepositoriesViewModelDelegate
-extension RepositoriesViewController: RepositoryViewModelDelegate {
+extension RepositoriesViewController: RepositoriesViewModelDelegate {
     func startRefresh() {
         DispatchQueue.main.async { [weak self] in
             self?.loadingIndicatorView.startAnimating()

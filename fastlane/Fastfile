@@ -1,0 +1,24 @@
+default_platform(:ios)
+
+platform :ios do
+  desc "Unit tests"
+  lane :tests do
+    scan(workspace: "gitRepoStars.xcworkspace", device: "iPhone 8", scheme: "gitRepoStars", code_coverage: true)
+  
+coverage_files_to_ignore = [
+    'Sources/Resources/*',
+    'Pods/*',
+]
+
+  slather(
+      output_directory: "fastlane/html",
+      workspace: "gitRepoStars.xcworkspace",
+      html: true,
+      scheme: "gitRepoStars",
+      proj: "gitRepoStars.xcodeproj",
+      ignore: coverage_files_to_ignore,
+      verbose: true,
+      show: true
+  )
+  end
+end

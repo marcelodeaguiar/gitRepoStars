@@ -9,12 +9,12 @@
 import Foundation
 
 protocol RespositoriesViewModelType {
-    var delegate: RepositoryViewModelDelegate? { get set }
+    var delegate: RepositoriesViewModelDelegate? { get set }
     func loadRepositories()
     func loadRepositoriesNextPage()
 }
 
-protocol RepositoryViewModelDelegate: AnyObject {
+protocol RepositoriesViewModelDelegate: AnyObject {
     func startRefresh()
     func endedRefresh()
     func startLoadingPage()
@@ -29,7 +29,7 @@ class RepositoriesViewModel: RespositoriesViewModelType {
     private var currentPage: Int = 0
     private var isLoadingPage: Bool = false
 
-    weak var delegate: RepositoryViewModelDelegate?
+    weak var delegate: RepositoriesViewModelDelegate?
 
     init(reposService: RepositoriesServiceType = RepositoriesService()) {
         self.reposService = reposService

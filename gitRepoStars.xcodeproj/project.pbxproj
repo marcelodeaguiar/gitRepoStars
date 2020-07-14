@@ -24,6 +24,9 @@
 		562E83FF24B8036D00C47555 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562E83FE24B8036D00C47555 /* HttpClient.swift */; };
 		5633928924BA04500066DC53 /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633928824BA04500066DC53 /* RepositoryCell.swift */; };
 		5633928B24BA0C080066DC53 /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633928A24BA0C080066DC53 /* BindableType.swift */; };
+		5633928D24BDD1EE0066DC53 /* RepositoriesViewModelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633928C24BDD1EE0066DC53 /* RepositoriesViewModelSpec.swift */; };
+		5633929124BDD4040066DC53 /* RepositoriesServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633929024BDD4040066DC53 /* RepositoriesServiceSpy.swift */; };
+		5633929324BDD51D0066DC53 /* RepositoriesDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5633929224BDD51D0066DC53 /* RepositoriesDelegateSpy.swift */; };
 		569D694A24B80D7600650651 /* HttpClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 569D694924B80D7600650651 /* HttpClientSpec.swift */; };
 		56AD3ECD24B818BD00320364 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56AD3ECC24B818BD00320364 /* URLSessionMock.swift */; };
 		A8DF117CA294418D6755A1C7 /* Pods_gitRepoStars_Tests_gitRepoStarsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4EAF23DA331B8D8905112E1 /* Pods_gitRepoStars_Tests_gitRepoStarsTests.framework */; };
@@ -75,6 +78,9 @@
 		562E83FE24B8036D00C47555 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		5633928824BA04500066DC53 /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 		5633928A24BA0C080066DC53 /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		5633928C24BDD1EE0066DC53 /* RepositoriesViewModelSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesViewModelSpec.swift; sourceTree = "<group>"; };
+		5633929024BDD4040066DC53 /* RepositoriesServiceSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesServiceSpy.swift; sourceTree = "<group>"; };
+		5633929224BDD51D0066DC53 /* RepositoriesDelegateSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesDelegateSpy.swift; sourceTree = "<group>"; };
 		569D694924B80D7600650651 /* HttpClientSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpec.swift; sourceTree = "<group>"; };
 		56AD3ECC24B818BD00320364 /* URLSessionMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		6EF32EBA1C9033F67BB07E95 /* Pods-gitRepoStars-gitRepoStarsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gitRepoStars-gitRepoStarsUITests.release.xcconfig"; path = "Target Support Files/Pods-gitRepoStars-gitRepoStarsUITests/Pods-gitRepoStars-gitRepoStarsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -176,9 +182,10 @@
 		56116DCC24B73BDA003394F4 /* gitRepoStarsTests */ = {
 			isa = PBXGroup;
 			children = (
-				56116DCF24B73BDA003394F4 /* Info.plist */,
-				569D694924B80D7600650651 /* HttpClientSpec.swift */,
 				56AD3ECC24B818BD00320364 /* URLSessionMock.swift */,
+				5633928F24BDD2BC0066DC53 /* Networking */,
+				5633928E24BDD2AE0066DC53 /* Repositories */,
+				56116DCF24B73BDA003394F4 /* Info.plist */,
 			);
 			path = gitRepoStarsTests;
 			sourceTree = "<group>";
@@ -252,6 +259,24 @@
 				56116DF924B74534003394F4 /* URLSession+Extensions.swift */,
 				56116DF724B741D0003394F4 /* ApiError.swift */,
 				562E83FE24B8036D00C47555 /* HttpClient.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5633928E24BDD2AE0066DC53 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				5633928C24BDD1EE0066DC53 /* RepositoriesViewModelSpec.swift */,
+				5633929024BDD4040066DC53 /* RepositoriesServiceSpy.swift */,
+				5633929224BDD51D0066DC53 /* RepositoriesDelegateSpy.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		5633928F24BDD2BC0066DC53 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				569D694924B80D7600650651 /* HttpClientSpec.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -507,6 +532,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5633929324BDD51D0066DC53 /* RepositoriesDelegateSpy.swift in Sources */,
+				5633929124BDD4040066DC53 /* RepositoriesServiceSpy.swift in Sources */,
+				5633928D24BDD1EE0066DC53 /* RepositoriesViewModelSpec.swift in Sources */,
 				56AD3ECD24B818BD00320364 /* URLSessionMock.swift in Sources */,
 				569D694A24B80D7600650651 /* HttpClientSpec.swift in Sources */,
 			);
